@@ -4,9 +4,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-html, body {
-  max-width: 100%;
+html {
   overflow-x: hidden;
+}
+body {
+  max-width: 100%;
 }
 body{
      background: linear-gradient(135deg, #f7f7f7 0%, #cfcfcf 100%);
@@ -53,6 +55,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-y: hidden;
 
 }
   
