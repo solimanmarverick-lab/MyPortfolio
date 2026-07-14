@@ -1,0 +1,322 @@
+/* ============ RESET ============ */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*, *::before, *::after { box-sizing: inherit; }
+
+body{
+    min-height: 100vh;
+    background: #fff;
+    color: #2b2b2b;
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; }
+
+/* ============ FONTS ============ */
+@font-face {
+  font-family: 'Oi';
+  src: url('font/BebasNeue-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppin';
+  src: url('font/Poppins-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'light';
+  src: url('font/Poppins-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ============ HOME ICON ============ */
+#home {
+  position: fixed;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  color: #ffffff;
+  transition: color 0.3s;
+  top: clamp(14px, 3vw, 30px);
+  left: clamp(14px, 3vw, 30px);
+  z-index: 1000;
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,.4));
+}
+
+/* ============ HERO ============ */
+.hero{
+    position: relative;
+    min-height: min(90vh, 720px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(70px, 10vw, 140px) clamp(20px, 6vw, 90px) clamp(40px, 6vw, 90px);
+    background-image: url("img/Black\ Aesthetic\ Wallpapers\ _\ Download\ Free\ Black\ Wallpapers.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+.hero-name{
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(2.4rem, 9vw, 5.5rem);
+    line-height: 1.05;
+    margin: 0;
+    text-transform: uppercase;
+    max-width: 20ch;
+}
+.hero-name .last-name{ display: block; }
+
+.hero-roles{
+    margin-top: clamp(14px, 3vw, 26px);
+    font-family: 'light', sans-serif;
+    font-size: clamp(0.75rem, 1.6vw, 1rem);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.hero-roles p{ margin: 0.2rem 0; }
+
+/* ============ SECTION TITLES (replaces old absolute-positioned labels) ============ */
+.section-title{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'Poppin', sans-serif;
+    font-size: clamp(1.05rem, 2.6vw, 1.5rem);
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 clamp(24px, 4vw, 40px);
+}
+.section-title .dot{
+    width: 11px;
+    height: 11px;
+    min-width: 11px;
+    border-radius: 50%;
+    background: rgb(227, 148, 12);
+}
+.section-title::after{
+    content: "";
+    flex: 1 1 auto;
+    height: 2px;
+    background: #e6e6e5;
+}
+
+/* ============ SHARED SECTION WRAPPER ============ */
+.about-section,
+.Experience,
+.ican,
+.technical-skills,
+.contact-section{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(40px, 7vw, 80px) clamp(20px, 6vw, 90px);
+    background: #fff;
+    box-sizing: border-box;
+}
+
+/* ============ ABOUT / PROFILE ============ */
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: clamp(24px, 4vw, 48px);
+}
+
+.container .profile-photo{
+    flex: 1 1 280px;
+    max-width: 380px;
+}
+
+.container img{
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 4px;
+}
+
+.content{
+    flex: 2 1 380px;
+    min-width: 260px;
+}
+
+.content p{
+    font-family: sans-serif;
+    font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+    line-height: 1.85;
+    color: #2b2b2b;
+    margin-bottom: 1.6rem;
+}
+
+.content p strong{ color: #000; }
+
+.inline-img{
+    display: block;
+    width: 100%;
+    max-height: 500px;
+    margin: 2.4rem 0;
+    object-fit: cover;
+    object-position: bottom;
+    border-radius: 4px;
+}
+
+/* ============ EXPERIENCE / BACKGROUND ============ */
+.Experience h2{
+    font-family: sans-serif;
+    font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+    color: #111;
+    margin: 2rem 0 0.6rem;
+}
+.Experience h2:first-of-type{ margin-top: 0; }
+
+.Experience p{
+    font-family: sans-serif;
+    font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+    line-height: 1.85;
+    color: #2b2b2b;
+    margin-bottom: 3rem;
+}
+
+/* ============ THINGS I CAN DO ============ */
+.ican p.intro{
+    font-family: sans-serif;
+    font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+    line-height: 1.85;
+    color: #2b2b2b;
+    margin-bottom: clamp(24px, 4vw, 40px);
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 12px;
+    background-color: white;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.skill-item {
+    flex: 1 1 200px;
+    font-family: sans-serif;
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+    color: #2b2b2b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 4px;
+}
+
+.skill-item i {
+    color: #555;
+    width: 20px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+/* ============ TECHNICAL SKILLS ============ */
+.technical-skills p{
+    font-family: sans-serif;
+    font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+    line-height: 1.85;
+    color: #2b2b2b;
+    margin-bottom: 1.6rem;
+}
+
+.skill-bar {
+    margin-bottom: 20px;
+}
+.skill-bar p{ margin-bottom: 0.4rem; }
+
+.bar-track {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    margin-top: 6px;
+    background-color: #000;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    background-color: rgb(227, 148, 12);
+}
+
+/* ============ CONTACT ============ */
+.contact-section p{
+    font-family: sans-serif;
+    font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+    line-height: 1.85;
+    color: #2b2b2b;
+    margin-bottom: 1.6rem;
+}
+.contact-section a{
+    font-family: sans-serif;
+    font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+    color: #111;
+}
+.contact-section a i{
+    color: rgb(227, 148, 12);
+    margin-right: 8px;
+}
+
+/* ============ SCROLL REVEAL ============ */
+.reveal-left,
+.reveal-right,
+.reveal-up {
+    opacity: 0;
+    transition: opacity 0.9s ease, transform 0.9s ease;
+    will-change: transform, opacity;
+}
+.reveal-left { transform: translateX(-100px); }
+.reveal-right { transform: translateX(100px); }
+.reveal-up { transform: translateY(60px); }
+.reveal-left.visible,
+.reveal-right.visible,
+.reveal-up.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.stagger-1 { transition-delay: 0.05s; }
+.stagger-2 { transition-delay: 0.15s; }
+.stagger-3 { transition-delay: 0.25s; }
+.stagger-4 { transition-delay: 0.35s; }
+.stagger-5 { transition-delay: 0.45s; }
+
+/* ============ RESPONSIVE TWEAKS ============ */
+
+/* Reduce translate distance on small screens so reveals don't overshoot */
+@media (max-width: 600px){
+    .reveal-left { transform: translateX(-40px); }
+    .reveal-right { transform: translateX(40px); }
+
+    .skill-item{ flex: 1 1 100%; justify-content: flex-start; }
+
+    .container{ flex-direction: column; }
+    .container .profile-photo{ max-width: 100%; }
+
+    .section-title{ gap: 10px; }
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce){
+    .reveal-left, .reveal-right, .reveal-up{
+        transition: none;
+        opacity: 1;
+        transform: none;
+    }
+}

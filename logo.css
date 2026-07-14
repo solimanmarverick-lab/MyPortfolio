@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+body{
+     background: linear-gradient(135deg, #f7f7f7 0%, #cfcfcf 100%);
+}
+.containment{
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    display: grid;
+    gap: clamp(24px, 6vw, 160px);
+    line-height:0;
+    padding: 0 clamp(16px, 5vw, 60px);
+    box-sizing: border-box;
+    max-width: 1600px;
+    margin: 0 auto;
+
+}
+.containment img{
+  display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    object-fit: cover;
+    border-style: solid;
+    border-color: white;
+}
+@font-face {
+  font-family: 'Oi';
+  src: url('font/BebasNeue-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;}
+
+.LOGO{
+    color:#27187e;
+    font-family: 'Oi', cursive;
+    font-size: clamp(2.5rem, 9vw, 12rem);
+    line-height: 1.1;
+    text-align: center;
+}
+.header{
+  width: 100%;
+  height: auto;
+  min-height: clamp(220px, 45vw, 550px);
+  padding: clamp(40px, 8vw, 80px) clamp(16px, 5vw, 60px);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+  
+.nav {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; 
+  align-items: center;
+  padding: 1rem clamp(1rem, 4vw, 2rem);
+  width: 100%;
+  margin-top: 30px;
+  box-sizing: border-box;
+  
+}
+
+.nav a {
+  text-decoration: none;
+justify-content: start;
+}
+
+.nav i {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: #27187e;
+  transition: color 0.3s;
+ 
+}
+
+.nav .fa-house:hover {
+  color: #a0a0a0;
+}
+
+.nav .mylogo {
+  width: clamp(50px, 8vw, 80px);
+  height: clamp(50px, 8vw, 80px);
+  border-radius: 50%;
+  object-fit: cover;
+  justify-self: center;
+}
+.Identity{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.Identity img{
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: cover;
+  border-style: solid;
+  border-color: rgb(190, 185, 185);
+}
+.Identity-overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(36, 37, 36, 0.88);
+  opacity:0;
+  transition: opacity 0.3 ease;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 1.75rem;
+ 
+}
+.Identity:hover .Identity-overlay{
+  opacity: 1;
+}
+.Identity-title{
+  font-family: 'PlayFair Display', serif;
+ font-weight: 700;
+ font-size: clamp(1.1rem, 3vw, 1.5rem);
+ color: white;
+}
+.Identity-desc{
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  line-height: 1.6;
+  color: white;
+}
+.Identity-tags{
+  font-size: 0.8rem;
+  font-family: 'Playfair Display', serif;
+  color: rgba(188, 183, 183, 0.65);
+  margin-top: 8px;
+}
+
+/* ===== Scroll reveal animations ===== */
+.reveal-left,
+.reveal-right,
+.reveal-up {
+    opacity: 0;
+    transition: opacity 0.9s ease, transform 0.9s ease;
+    will-change: transform, opacity;
+}
+
+.reveal-left {
+    transform: translateX(-100px);
+}
+
+.reveal-right {
+    transform: translateX(100px);
+}
+
+.reveal-up {
+    transform: translateY(60px);
+}
+
+.reveal-left.visible,
+.reveal-right.visible,
+.reveal-up.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.stagger-1 { transition-delay: 0.05s; }
+.stagger-2 { transition-delay: 0.15s; }
+.stagger-3 { transition-delay: 0.25s; }
+.stagger-4 { transition-delay: 0.35s; }
+
+/* ===== Touch device fallback: hover overlays aren't reachable without a mouse ===== */
+@media (hover: none) {
+  .Identity-overlay{
+    opacity: 1;
+    background: rgba(36, 37, 36, 0.75);
+  }
+}
+
+/* ===== Small screen tweaks ===== */
+@media (max-width: 480px) {
+  .nav {
+    margin-top: 16px;
+  }
+  .containment {
+    gap: 24px;
+  }
+}
