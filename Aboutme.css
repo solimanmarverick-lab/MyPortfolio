@@ -58,7 +58,9 @@ a { text-decoration: none; }
     min-height: min(90vh, 720px);
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+    text-align: center;
     padding: clamp(70px, 10vw, 140px) clamp(20px, 6vw, 90px) clamp(40px, 6vw, 90px);
     background-image: url("img/Black\ Aesthetic\ Wallpapers\ _\ Download\ Free\ Black\ Wallpapers.jpg");
     background-size: cover;
@@ -71,18 +73,19 @@ a { text-decoration: none; }
     font-family: 'Anton', sans-serif;
     font-size: clamp(2.4rem, 9vw, 5.5rem);
     line-height: 1.05;
-    margin: 0;
+    margin: 0 auto;
     text-transform: uppercase;
     max-width: 20ch;
 }
 .hero-name .last-name{ display: block; }
 
 .hero-roles{
-    margin-top: clamp(14px, 3vw, 26px);
+    margin: clamp(14px, 3vw, 26px) auto 0;
     font-family: 'light', sans-serif;
     font-size: clamp(0.75rem, 1.6vw, 1rem);
     letter-spacing: 2px;
     text-transform: uppercase;
+    max-width: 40ch;
 }
 .hero-roles p{ margin: 0.2rem 0; }
 
